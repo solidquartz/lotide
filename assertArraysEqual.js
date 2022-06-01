@@ -1,6 +1,6 @@
 //takes in two arrays and returns true or false
 //based on if they are a perfect match
-const eqArrays = function(arrayOne, arrayTwo) {
+const eqArrays = function (arrayOne, arrayTwo) {
   if (arrayOne.length !== arrayTwo.length) {
     return false;
   }
@@ -9,17 +9,15 @@ const eqArrays = function(arrayOne, arrayTwo) {
       return false;
     }
   }
-  //if it gets through the whole loop without exiting, it will be true
-  //this works better than else because we want it to check the whole thing or escape
   return true;
 };
 
 //takes in two arrays and logs an appropriate message to the console
 const assertArraysEqual = function(arrayOne, arrayTwo) {
   if (eqArrays(arrayOne, arrayTwo)) {
-    console.log(`🥳 Equal!`);
+    console.log(`🥳 Equal! ${arrayOne} === ${arrayTwo}!`);
   } else {
-    console.log(`😱 Not equal!`);
+    console.log(`😱 Not equal! ${arrayOne} !== ${arrayTwo}!`);
   }
 };
 
