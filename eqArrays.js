@@ -1,5 +1,5 @@
 //assertEqual function which can check if two arguments are equal
-const assertEqual = function (actual, expected) {
+const assertEqual = function(actual, expected) {
   if (actual === expected) {
     return console.log(`🥳 Action passed: [${actual}] === [${expected}]`);
   }
@@ -9,7 +9,7 @@ const assertEqual = function (actual, expected) {
 
 //takes in two arrays and returns true or false
 //based on if they are a perfect match
-const eqArrays = function (arrayOne, arrayTwo) {
+const eqArrays = function(arrayOne, arrayTwo) {
   if (arrayOne.length !== arrayTwo.length) {
     return false;
   }
