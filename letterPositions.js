@@ -1,3 +1,4 @@
+//assert equal functions
 const eqArrays = function(arrayOne, arrayTwo) {
   if (arrayOne.length !== arrayTwo.length) {
     return false;
@@ -19,36 +20,28 @@ const assertEqual = function(actual, expected) {
   console.log(`😱 Assertion Failed: [${actual}] !== [${expected}]`);
 };
 
-
-//takes in two arrays and logs an appropriate message to the console
+//assert arrays equal
 const assertArraysEqual = function(arrayOne, arrayTwo) {
   const result = eqArrays(arrayOne, arrayTwo);
   assertEqual(result, true);
 };
 
 
+//-------------------------------------------------------------
+
 
 //LETTER POSITIONS
 //returns all the INDICES in the string where the given character is found
 //multiple numbers may be needed to represent all the places in the string
+//within the loop, the object is only edited if the character isn't a space
 
 //reference guide: letter (key): `sentence[i]`, index (value): `i`
 
 const letterPositions = function(sentence) {
   let results = {};
 
-  // add something to skip spaces
-
   for (let i = 0; i < sentence.length; i++) {
 
-    //   //key doesn't exist
-    //   if (results[sentence[i]] === undefined) {
-    //     results[sentence[i]] = [i];
-
-    //     //key exists
-    //   } else {
-    //     results[sentence[i]].push(i);
-    //   }
     if (sentence[i] !== " ") {
       results[sentence[i]] ? results[sentence[i]].push(i) : results[sentence[i]] = [i];
     }
