@@ -1,5 +1,5 @@
 //assertEqual function which can check if two arguments are equal
-const assertEqual = function (actual, expected) {
+const assertEqual = function(actual, expected) {
   if (actual === expected) {
     return console.log(`🥳 Action passed: [${actual}] === [${expected}]`);
   }
@@ -13,7 +13,7 @@ const head = function(array) {
   return array[0];
 };
 
-assertEqual(head([5,6,7]), 5);
+assertEqual(head([5, 6, 7]), 5);
 assertEqual(head(["Hello", "Lighthouse", "Labs"]), "Hello");
 assertEqual(head(['bubble tea']), 'bubble tea');
 assertEqual(head([]));
