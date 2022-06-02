@@ -14,14 +14,11 @@ const countLetters = function(sentence) {
   const letters = {
   };
 
-  //loops
-  for (let letter of sentence) {
+  let noSpaces = sentence.replace(/ /g, "");
 
-    // //skips spaces (not working)
-    // if (sentence[letter] === ' ') {
-    //   letter++;
-    // }
-    
+  //loops
+  for (let letter of noSpaces) {
+
     //creates a key-value pair if the letter doesn't exist
     //notably it's checking LETTERS, not sentence
     if (letters[letter] === undefined) {
