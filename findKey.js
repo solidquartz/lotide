@@ -33,13 +33,24 @@ const assertEqual = function(actual, expected) {
 //scans the object and returns the first key for which the callback returns a truthy value.
 //if no key is found, returns undefined.
 
-const findKey = function() {
-  
+const findKey = function(object, callback) {
+
+  for (const key in object) {
+
+    if (callback(object[key])) {
+
+      return key;
+    }
+  }
 };
 
+//notes
+//object[key] inside the loop will be treated as each restaurant name in succession, so that's what we need to access. we use bracket notation because it's a variable.
 
-//tests
-findKey({
+
+//test
+
+const results = findKey({
   "Blue Hill": { stars: 1 },
   "Akaleri": { stars: 3 },
   "noma": { stars: 2 },
@@ -48,12 +59,7 @@ findKey({
   "Akelarre": { stars: 3 }
 }, x => x.stars === 2);
 // => "noma"
+console.log(results);
+//we are storing the results in a variable because otherwise the function will run twice and the return value won't get captured/stored anywhere.
 
-assertEqual(findKey({
-  "Blue Hill": { stars: 1 },
-  "Akaleri": { stars: 3 },
-  "noma": { stars: 2 },
-  "elBulli": { stars: 3 },
-  "Ora": { stars: 2 },
-  "Akelarre": { stars: 3 }
-}, x => x.stars === 2), "noma");
+assertEqual(results, "noma");
