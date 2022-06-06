@@ -1,5 +1,4 @@
-//takes in two arrays and returns true or false
-//based on if they are a perfect match
+//takes in two arrays and returns true or false based on if they are a perfect match
 const eqArrays = function(arrayOne, arrayTwo) {
   if (arrayOne.length !== arrayTwo.length) {
     return false;
