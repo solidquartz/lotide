@@ -1,4 +1,3 @@
-const assertEqual = require('../assertEqual');
 const assertArraysEqual = require('../assertArraysEqual');
 const tail = require('../tail');
 
@@ -11,3 +10,4 @@ assertArraysEqual(tail(oneTest), ['one']);
 
 const emptyTest = [];
 assertArraysEqual(tail(emptyTest), []);
+
